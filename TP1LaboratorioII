@@ -12,16 +12,16 @@ namespace CajeroAutomatico
                 Console.Clear();
                 Console.WriteLine("MENU");
                 Console.WriteLine();
-                Console.WriteLine("Ejercio 1");
-                Console.WriteLine("Ejercio 2");
-                Console.WriteLine("Ejercio 3");
-                Console.WriteLine("Ejercio 4");
-                Console.WriteLine("Ejercio 5");
-                Console.WriteLine("Ejercio 6");
-                Console.WriteLine("Ejercio 7");
-                Console.WriteLine("Ejercio 8");
-                Console.WriteLine("Ejercio 9");
-                Console.WriteLine("Ejercio 10");
+                Console.WriteLine("Ejercicio 1");
+                Console.WriteLine("Ejercicio 2");
+                Console.WriteLine("Ejercicio 3");
+                Console.WriteLine("Ejercicio 4");
+                Console.WriteLine("Ejercicio 5");
+                Console.WriteLine("Ejercicio 6");
+                Console.WriteLine("Ejercicio 7");
+                Console.WriteLine("Ejercicio 8");
+                Console.WriteLine("Ejercicio 9");
+                Console.WriteLine("Ejercicio 10");
                 Console.WriteLine("0. Salir");
                 Console.WriteLine();
                 Console.Write("Opcion: ");
@@ -376,6 +376,7 @@ namespace CajeroAutomatico
 
                             }
                             Console.WriteLine();
+                            
                             Console.WriteLine("Notas del curso A:");
                             Console.WriteLine();
                             for (int i = 1; i < A.Length; i++)
@@ -398,6 +399,10 @@ namespace CajeroAutomatico
                             {
                                 Console.WriteLine("El curso A tiene mejor promedio.");
                             }
+                            else if (promedioA == promedioB)
+                            {
+                                Console.WriteLine("El curso A y B tienen el mismo promedio.");
+                            }
                             else
                             {
                                 Console.WriteLine("El curso B tiene mejor promedio.");
@@ -407,7 +412,7 @@ namespace CajeroAutomatico
                     default:
 
                         {
-                            Console.WriteLine("Opción inválida.");
+                            
                             break;
                         }
 
@@ -418,3 +423,4 @@ namespace CajeroAutomatico
         }
     }
 }
+
