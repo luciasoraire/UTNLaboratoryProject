@@ -1,0 +1,420 @@
+using System;
+
+namespace CajeroAutomatico
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int opcion = 0;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("MENU");
+                Console.WriteLine();
+                Console.WriteLine("Ejercio 1");
+                Console.WriteLine("Ejercio 2");
+                Console.WriteLine("Ejercio 3");
+                Console.WriteLine("Ejercio 4");
+                Console.WriteLine("Ejercio 5");
+                Console.WriteLine("Ejercio 6");
+                Console.WriteLine("Ejercio 7");
+                Console.WriteLine("Ejercio 8");
+                Console.WriteLine("Ejercio 9");
+                Console.WriteLine("Ejercio 10");
+                Console.WriteLine("0. Salir");
+                Console.WriteLine();
+                Console.Write("Opcion: ");
+
+                opcion = Convert.ToInt32(Console.ReadLine());
+                Console.Clear();
+                switch (opcion)
+                {
+                    case 1:
+                        {
+                            Console.WriteLine("Programar una aplicación en C# que permita pedir el ingreso del precio de un artículo y la cantidad que lleva el cliente. Mostrar lo que debe abonar el comprador.");
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese el precio del artículo");
+                            double precio = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese la cantidad de productos");
+                     
+                            int cantidad = Convert.ToInt32(Console.ReadLine());
+                            double total = cantidad * precio;
+                            Console.WriteLine();
+                            Console.WriteLine($"El total a abonar es ${total}");
+                            break;
+                        }
+                    case 2:
+                        {
+                            Console.WriteLine("Realizar un programa que lea cuatro valores numéricos e informar su suma y promedio.");
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese el primer número");
+                            int numero1 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese el segundo número");
+                            int numero2 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese el tercer número");
+                            int numero3 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese el cuarto número");
+                            int numero4 = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine();
+                            int suma;
+                            
+                            double promedio;
+                            suma = numero1 + numero2 + numero3 + numero4;
+                            promedio = suma / 4;
+
+                            Console.WriteLine($"La suma de los 4 valores ingresados es {suma}");
+                            Console.WriteLine();
+                            Console.WriteLine($"El promedio de los valores ingresados es {promedio}");
+
+
+
+                            break;
+                        }
+                    case 3:
+                        {
+                            Console.WriteLine("Se ingresan tres notas de un alumno, si el promedio es mayor o igual a siete mostrar un mensaje que diga Promocionado.");
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese la primera nota del alumno");
+                            double nota1 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese la segunda nota del alumno");
+                            double nota2 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese la tercera nota del alumno");
+                            double nota3 = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine();
+                            double promedio = (nota1 + nota2 + nota3) / 3;
+                            if (promedio >= 7)
+                            {
+
+                                Console.WriteLine("Promocionado");
+                                Console.WriteLine($"El promedio final del alumno es {promedio.ToString("0.00")}");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Regular");
+                                Console.WriteLine($"El promedio final del alumno es {promedio.ToString("0.00")}");
+
+                            }
+                            
+                            break;
+                        }
+                    case 4:
+                        {
+                            Console.WriteLine("Se ingresa por teclado un número positivo de uno o dos dígitos (1..99) mostrar un mensaje indicando si el número tiene uno o dos dígitos.");
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese un número positivo de 1 a 99");
+                            int numero;
+                            numero = Convert.ToInt32(Console.ReadLine());
+                            
+                            if (numero>=1 && numero <= 99)
+                            {
+                                if (numero>=1 && numero <= 9)
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine("El número ingresado es de un dígito.");
+                                }
+                                else
+                                {
+                                    Console.WriteLine();
+                                    Console.WriteLine("El número ingresado es de dos dígitos.");
+                                }
+                            }
+
+                            else
+                            {
+                                Console.WriteLine("Número erróneo");
+                                Console.WriteLine();
+                                Console.WriteLine("Ingrese un número positivo de 1 a 99");
+                                numero = Convert.ToInt32(Console.ReadLine());
+                            }
+
+
+                            break;
+                        }
+                    case 5:
+                        {
+                            Console.WriteLine("Un postulante a un empleo, realiza un test de capacitación, se obtuvo la siguiente información: cantidad total de preguntas que se le realizaron y la cantidad de preguntas que contestó correctamente.Se pide confeccionar un programa que ingrese los dos datos por teclado e informe el nivel del mismo según el porcentaje de respuestas correctas que ha obtenido, y sabiendo que: Nivel máximo: Porcentaje & gt;= 90 %. Nivel medio: Porcentaje & gt;= 75 % y & lt; 90 %. Nivel regular: Porcentaje & gt;= 50 % y & lt; 75 %. Fuera de nivel: Porcentaje & lt; 50 %.");
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese la cantidad de preguntas realizadas");
+                            double preguntas = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese la cantidad de preguntas acertadas");
+                            double acertadas = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine();
+                            double porcentaje = (acertadas/preguntas)*100;
+                            Console.WriteLine($"Porcentaje obtenido: %{porcentaje}");
+                            Console.WriteLine();
+                            if (porcentaje >= 90)
+                            {
+                                Console.WriteLine("Nivel máximo");
+                            }
+                            else if (porcentaje >= 75 && porcentaje<90)
+                            {
+                                Console.WriteLine("Nivel medio");
+                            }
+                            else if (porcentaje >= 50 && porcentaje < 75)
+                            {
+                                Console.WriteLine("Nivel regular");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Fuera de nivel");
+                            }
+
+                            break;
+                        }
+                    case 6:
+                        {
+                            Console.WriteLine("De un operario se conoce su sueldo y los años de antigüedad. Se pide confeccionar un programa que lea los datos de entrada e informe: a. Si el sueldo es inferior a 500 y su antigüedad es igual o superior a 10 años, otorgarle un aumento del 20 %, mostrar el sueldo a pagar. b. Si el sueldo es inferior a 500 pero su antigüedad es menor a 10 años, otorgarle un aumento de 5 %. c. Si el sueldo es mayor o igual a 500 mostrar el sueldo en pantalla sin cambios.");
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese el sueldo del operario");
+                            double sueldo = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese los años de antigüedad del operario");
+                            double antiguedad = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine();
+                            if (sueldo<500 && antiguedad >= 10)
+                            {
+                                sueldo = sueldo*1.20;
+                                Console.WriteLine($"Aumento salarial del 20%. Sueldo actualizado: ${sueldo}");
+                            }
+                            else if (sueldo < 500 && antiguedad < 10)
+                            {
+                                sueldo = sueldo * 1.05;
+                                Console.WriteLine($"Aumento salarial del 5%.Sueldo actualizado: ${sueldo}");
+                            }
+                            else
+                            {
+                                Console.WriteLine($"Sin aumento. Dinero a cobrar: ${sueldo}");
+                            }
+
+                            break;
+                        }
+                    case 7:
+                        {
+                            Console.WriteLine("En una empresa trabajan n empleados cuyos sueldos oscilan entre $100 y $500, realizar un programa que lea los sueldos que cobra cada empleado e informe cuántos empleados cobran entre $100 y $300 y cuántos cobran más de $300. Además el programa deberá informar el importe que gasta la empresa en sueldos al personal.");
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese los sueldos de los empleados. Finaliza la carga cuando el sueldo sea 0");
+                            double sueldo;
+                            int empleados1 = 0;
+                            int empleados2 = 0;
+                            double total1 = 0;
+                            double total2 = 0;
+                            sueldo = Convert.ToDouble(Console.ReadLine());
+                            while (sueldo != 0)
+                            {
+                                if (sueldo >= 100 && sueldo <= 300)
+                                {
+                                    empleados1 = empleados1 + 1;
+                                    total1 = total1 + sueldo;
+                                }
+                                else
+                                {
+                                    empleados2 = empleados2 + 1;
+                                    total2 = total2 + sueldo;
+                                }
+                                Console.WriteLine("Ingrese sueldo");
+                                sueldo = Convert.ToDouble(Console.ReadLine());
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine($"Hay {empleados1} empleados que cobran entre $100 y $300.");
+                            Console.WriteLine();
+                            Console.WriteLine($"Hay {empleados2} empleados que cobran más de $300.");
+                            Console.WriteLine();
+                            Console.WriteLine($"La empresa gasta un total de ${total1+total2} en sueldos al personal.");
+
+                            break;
+                        }
+                    case 8:
+                        {
+                            Console.WriteLine("Se cuenta con la siguiente información: Las edades de 50 estudiantes del turno mañana. Las edades de 60 estudiantes del turno tarde. Las edades de 110 estudiantes del turno noche. Las edades de cada estudiante deben ingresarse por teclado. a) Obtener el promedio de las edades de cada turno (tres promedios) b. Imprimir dichos promedios (promedio de cada turno) c. Mostrar por pantalla un mensaje que indique cual de los tres turnos tiene un promedio de edades menor.");
+                            Console.WriteLine();
+                            Console.WriteLine("Estudiantes turno mañana");
+                            Console.WriteLine();
+                            int edadesmañana=0;
+                            int edadmañana;
+                            int edadestarde = 0;
+                            int edadtarde;
+                            int edadesnoche = 0;
+                            int edadnoche;
+                            for (int i = 1; i < 6; i++)
+                            {
+                                
+                                Console.WriteLine($"Edad del estudiante {i} del turno mañana:");
+                                edadmañana = Convert.ToInt32(Console.ReadLine());
+                                edadesmañana = edadesmañana + edadmañana;
+                            }
+                            double promediomañana = edadesmañana / 5;
+                            Console.WriteLine();
+                            Console.WriteLine("Estudiantes turno tarde");
+                            Console.WriteLine();
+                            for (int i = 1; i < 6; i++)
+                            {
+
+                                Console.WriteLine($"Edad del estudiante {i} del turno tarde:");
+                                edadtarde = Convert.ToInt32(Console.ReadLine());
+                                edadestarde = edadestarde + edadtarde;
+                            }
+                            double promediotarde = edadestarde / 5;
+                            Console.WriteLine();
+                            Console.WriteLine("Estudiantes turno noche");
+                            Console.WriteLine();
+                            for (int i = 1; i < 6; i++)
+                            {
+
+                                Console.WriteLine($"Edad del estudiante {i} del turno noche:");
+                                edadnoche = Convert.ToInt32(Console.ReadLine());
+                                edadesnoche = edadesnoche + edadnoche;
+                            }
+                            double promedionoche = edadesnoche / 5;
+                            Console.WriteLine();
+
+                            Console.WriteLine($"El turno mañana tiene un promedio de edades de {promediomañana}");
+                            Console.WriteLine($"El turno tarde tiene un promedio de edades de {promediotarde}");
+                            Console.WriteLine($"El turno noche tiene un promedio de edades de {promedionoche}");
+
+                            if (promediomañana < promediotarde && promediomañana < promedionoche)
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("El turno mañana tiene un promedio de edades menor.");
+                            }
+                            else if (promediotarde < promediomañana && promediotarde < promedionoche)
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("El turno tarde tiene un promedio de edades menor.");
+                            }
+                            else
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("El turno noche tiene un promedio de edades menor.");
+                            }
+
+                            break;
+                        }
+                    case 9:
+                        {
+                            Console.WriteLine("En un banco se procesan datos de las cuentas corrientes de sus clientes. De cada cuenta corriente se conoce: número de cuenta y saldo actual. El ingreso de datos debe finalizar al ingresar un valor negativo en el número de cuenta. Se pide confeccionar un programa que lea los datos de las cuentas corrientes e informe: a. De cada cuenta: número de cuenta y estado de la cuenta según su saldo,sabiendo que: Estado de la cuenta Acreedor si el saldo es > 0. Deudor si el saldo es <0. Nulo; si el saldo es =0. b. La suma total de los saldos acreedores.");
+                            Console.WriteLine();
+                            Console.WriteLine("Ingrese sus datos. El sistema finaliza cuando un número de cuenta es negativo.");
+                            Console.WriteLine();
+                            int numero;
+                            double saldo;
+                            double acreedor = 0;
+                            do {
+                                Console.WriteLine();
+                                Console.WriteLine("Ingrese el número de cuenta");
+                                numero = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine();
+                                Console.WriteLine("Ingrese el saldo de la cuenta");
+                                saldo = Convert.ToInt32(Console.ReadLine());
+
+                                if (saldo > 0 && numero>0) //acá agregamos la segunda condición para que no se tome en cuenta el segundo saldo.
+                                {
+                                    acreedor = acreedor + saldo;
+                                }
+                                
+                            } 
+                            
+                            while (numero > 0);
+                            Console.WriteLine();
+                            if (saldo > 0)
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("Estado de la cuenta: Acreedor");
+                                Console.WriteLine($"La suma total de los saldos acreedores es ${acreedor}");
+
+                            }
+                            else if (saldo < 0)
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("Estado de la cuenta: Deudor");
+                            }
+                            else
+                            {
+                                Console.WriteLine();
+                                Console.WriteLine("Estado de la cuenta: Nulo");
+                            }
+
+
+                            break;
+                        }
+                    case 10:
+                        {
+                            Console.WriteLine("Se tienen las notas del primer parcial de los alumnos de dos cursos, el curso A y el curso B, cada curso cuenta con 5 alumnos. Realizar un programa que muestre el curso que obtuvo el mayor promedio general.");
+                            Console.WriteLine();
+                            int[] A = new int[6];
+                            int[] B = new int[6];
+                            int notasA = 0;
+                            int notasB = 0;
+                            int promedioA;
+                            int promedioB;
+                            
+                            Console.WriteLine("Ingresar las notas del curso A");
+                            Console.WriteLine();
+                            for (int i = 1; i < A.Length; i++)
+                            {
+                                Console.WriteLine($"Nota del alumno {i}: ");
+                                A[i] = Convert.ToInt32(Console.ReadLine());
+                                notasA= notasA + A[i];
+
+                            }
+
+                            Console.WriteLine();
+                            Console.WriteLine("Ingresar las notas del curso B");
+                            Console.WriteLine();
+                            for (int i = 1; i < B.Length; i++)
+                            {
+                                Console.WriteLine($"Nota del alumno {i}: ");
+                                B[i] = Convert.ToInt32(Console.ReadLine());
+                                notasB = notasB + B[i];
+
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine("Notas del curso A:");
+                            Console.WriteLine();
+                            for (int i = 1; i < A.Length; i++)
+                            {
+                                Console.WriteLine($"La nota del alumno {i} es {A[i]}");
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine("Notas del curso B:");
+                            Console.WriteLine();
+                            for (int i = 1; i < B.Length; i++)
+                            {
+                                Console.WriteLine($"La nota del alumno {i} es {B[i]}");
+                            }
+                            
+                            Console.WriteLine();
+                            
+                            promedioA = notasA / 5;
+                            promedioB = notasB / 5;
+                            if (promedioA> promedioB)
+                            {
+                                Console.WriteLine("El curso A tiene mejor promedio.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("El curso B tiene mejor promedio.");
+                            }
+                            break;
+                        }
+                    default:
+
+                        {
+                            Console.WriteLine("Opción inválida.");
+                            break;
+                        }
+
+                }
+                
+            } while (opcion != 0);
+
+        }
+    }
+}
